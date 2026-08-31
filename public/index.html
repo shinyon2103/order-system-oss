@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f7f9" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>注文受付システム</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/order-system-icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css?v=29" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand" href="/" data-route="">
+        <span class="brand-mark" aria-hidden="true">O</span>
+        <span>
+          <strong>注文受付</strong>
+          <small id="header-context">端末メニュー</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="home-link" href="/" data-route="">入口</a>
+        <span id="connection-status" class="connection-status" role="status">確認中</span>
+      </div>
+    </header>
+    <main id="app" class="app-shell" aria-live="polite"></main>
+    <script type="module" src="/app.js?v=50"></script>
+  </body>
+</html>

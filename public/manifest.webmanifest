@@ -1,0 +1,19 @@
+{
+  "name": "文化祭 注文受付システム",
+  "short_name": "注文受付",
+  "description": "受付・調理・受け渡しをリアルタイムに連携する文化祭向け注文システム",
+  "lang": "ja",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f7f9",
+  "theme_color": "#f6f7f9",
+  "icons": [
+    {
+      "src": "/order-system-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "order-system",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-20",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/health"]
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "order-system-db",
+      "migrations_dir": "./migrations"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "ORDER_QUEUE",
+        "class_name": "OrderQueue"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["OrderQueue"]
+    }
+  ],
+  "env": {
+    "staging": {
+      "name": "order-system-staging",
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "order-system-staging-db",
+          "migrations_dir": "./migrations"
+        }
+      ],
+      "durable_objects": {
+        "bindings": [
+          {
+            "name": "ORDER_QUEUE",
+            "class_name": "OrderQueue"
+          }
+        ]
+      }
+    }
+  }
+}

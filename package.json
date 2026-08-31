@@ -1,0 +1,27 @@
+{
+  "name": "order-system",
+  "description": "Cloudflare-based order workflow system for event food stalls",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --env=\"\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "pretypecheck": "npm run types",
+    "typecheck": "tsc --noEmit",
+    "types": "wrangler types",
+    "deploy:dry": "wrangler deploy --env=\"\" --dry-run",
+    "deploy:dry:staging": "wrangler deploy --env staging --dry-run",
+    "check:startup": "wrangler check startup",
+    "check:smoke": "node scripts/smoke-test.mjs",
+    "check:acceptance": "node scripts/acceptance-test.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "latest",
+    "@types/node": "^26.2.0",
+    "typescript": "latest",
+    "vitest": "latest",
+    "wrangler": "^4.125.0"
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+.wrangler/
+dist/
+.dev.vars
+worker-configuration.d.ts
+*.cpuprofile
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+credentials.json
+credentials.txt
+*-credentials.json
+*-credentials.txt
